@@ -2,7 +2,8 @@
 
 # file name: egnmf.py
 # Author: Takehiro Sano
-# Affiliation: Okayama University
+# Affiliation: Okayama University (~2021/3)
+# Mail: sano@momo.cs.okayama-u.ac.jp
 
 
 import numpy as np
