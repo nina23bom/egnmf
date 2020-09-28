@@ -143,9 +143,9 @@ def mur_algorithm(X, U, V, W, D):
     V: updated factor matrix (coefficient)
     """
     Unew = U * np.dot(X, V) / np.dot(U, np.dot(V.T, V))
-    Unew = np.where(Unew < 1e-9, 1e-9, Unew)
+    Unew = np.fmax(Unew, 1e-9)
     Vnew = V * (np.dot(X.T, Unew) + np.dot(W, V)) / (np.dot(V, np.dot(Unew.T, Unew)) + np.dot(D, V))
-    Vnew = np.where(Vnew < 1e-9, 1e-9, Vnew)
+    Vnew = np.fmax(Vnew, 1e-9)
 
     return Unew, Vnew
 
@@ -177,8 +177,8 @@ class GNMF:
 
         # init
         U, V = initializeUV(fea, smp, self.n_components, self.random_state)
-        U = np.where(U < 1e-9, 1e-9, U)
-        V = np.where(V < 1e-9, 1e-9, V)
+        U = np.fmax(U, 1e-9)
+        V = np.fmax(V, 1e-9)
         U, V = normalizeUV(U, V)
 
         # construct p-NN graph
