@@ -8,10 +8,12 @@ Dependency
 - numpy
 - scipy
 - scikit-learn
-- networkx
+- networkx <= 2.3
 - metis
 - munkres
 - pyitlib
 
-
+Reference
+----
+[1] https://doi.org/10.11517/pjsai.JSAI2020.0_4J2GS202
 
