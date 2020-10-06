@@ -2,8 +2,7 @@
 
 # file name: gnmf.py
 # Author: Takehiro Sano
-# Affiliation: Okayama University (~2021/3)
-# Mail: sano@momo.cs.okayama-u.ac.jp
+# License: MIT License
 
 
 import sys
