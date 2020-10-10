@@ -8,7 +8,7 @@
 import numpy as np
 from sklearn.cluster import KMeans
 import networkx as nx
-import metis
+import pymetis
 from .gnmf import GNMF, const_pNNgraph, preproc_ncw
 from .metrics import calc_ac_score, calc_nmi_score
 
@@ -62,9 +62,9 @@ def HBGF(base_clusters, nclass=None):
 
     W = np.vstack([np.hstack([np.zeros((colA, colA)), A.T]), np.hstack([A, np.zeros((rowA, rowA))])])
 
-    parts = metis.part_graph(graph=nx.Graph(W), nparts=nclass)[1]
+    membership = pymetis.part_graph(nparts=nclass, adjacency=nx.Graph(W))[1]
     
-    labels = parts[colA:]
+    labels = membership[colA:]
 
     return np.array(labels)
 
