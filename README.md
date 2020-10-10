@@ -8,8 +8,8 @@ Dependency
 - numpy
 - scipy
 - scikit-learn
-- networkx <= 2.3
-- metis
+- networkx 
+- pymetis
 - munkres
 - pyitlib
 
