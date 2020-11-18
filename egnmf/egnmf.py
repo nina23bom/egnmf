@@ -76,6 +76,17 @@ class EGNMF:
     """
     def __init__(self, n_clusters, rterm=100.0, p=5, max_iter=30, n_estimators=30, random_state=None):
         """Create a new instance"""
+        if not (n_clusters > 1):
+            raise(ValueError('n_components must be greater than 1.'))
+        if not (rterm >= 0.0):
+            raise(ValueError('rterm must be positive.'))
+        if not (p > 0):
+            raise(ValueError('p must be positive.'))
+        if not (max_iter > 1):
+            raise(ValueError('maxiter must be greater than 1.'))
+        if not (n_estimators > 1):
+            raise(ValueError('n_estimators must be greater than 1.'))
+
         self.n_clusters = n_clusters
         self.rterm = rterm
         self.p = p

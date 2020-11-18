@@ -155,6 +155,15 @@ class GNMF:
     """
     def __init__(self, n_components, rterm=100.0, p=5, max_iter=100, W=None, ncw=True, random_state=None, calc_objs=None, verbose=False):
         """Create a new instance"""
+        if not (n_components > 0):
+            raise(ValueError('n_components must be positive.'))
+        if not (rterm >= 0.0):
+            raise(ValueError('rterm must be positive.')) 
+        if not (p > 0):
+            raise(ValueError('p must be positive.'))
+        if not (max_iter > 1):
+            raise(ValueError('maxiter must be greater than 1.'))
+
         self.n_components = n_components
         self.rterm = rterm
         self.p = p
@@ -197,7 +206,7 @@ class GNMF:
             objs = [1.0]
         
         # MUR
-        for it in range(self.max_iter):
+        for it in range(1, self.max_iter+1):
             U, V = mur_algorithm(X, U, V, W, D)
 
             if self.calc_objs:
