@@ -8,65 +8,9 @@
 import numpy as np
 from sklearn.cluster import KMeans
 import networkx as nx
-import pymetis
+import ClusterEnsembles as CE
 from .gnmf import GNMF, const_pNNgraph, preproc_ncw
 from .metrics import calc_ac_score, calc_nmi_score
-
-
-def create_hypergraph(base_clusters):
-    """create the incidence matrix of base clusters' hypergraph
-    
-    Parameter
-    ----------
-    base_clusters: labels produced by base algorithms
-    
-    Return
-    -------
-    H: incidence matrix
-    """
-    H = None
-    bc_len = base_clusters.shape[1]
-
-    for base_cluster in base_clusters:
-        bc_types = np.unique(base_cluster)
-        bc_types_len = len(bc_types)
-        bc2id = dict(zip(bc_types, np.arange(bc_types_len)))
-        h = np.zeros((bc_len, bc_types_len))
-        for i, bc_elem in enumerate(base_cluster):
-            h[i, bc2id[bc_elem]] = 1.0
-        if H is None:
-            H = h
-        else:
-            H = np.hstack([H, h])
-
-    return H
-
-
-def HBGF(base_clusters, nclass=None):
-    """Hybrid Bipartite Graph Formulation (HBGF) 
-    
-    Parameters
-    ----------
-    base_clusters: labels produced by base algorithms
-    nclass: number of classes 
-    
-    Return
-    -------
-    labels: concensus cluster obtained from HBGF
-    """
-    if nclass is None:
-        nclass = len(np.unique(base_clusters))
-
-    A = create_hypergraph(base_clusters)
-    rowA, colA = A.shape
-
-    W = np.vstack([np.hstack([np.zeros((colA, colA)), A.T]), np.hstack([A, np.zeros((rowA, rowA))])])
-
-    membership = pymetis.part_graph(nparts=nclass, adjacency=nx.Graph(W))[1]
-    
-    labels = membership[colA:]
-
-    return np.array(labels)
 
 
 class EGNMF:
@@ -108,7 +52,7 @@ class EGNMF:
             labels = kmeans.fit(V).labels_
             base_clusters.append(labels)
 
-        self.labels_ = HBGF(np.array(base_clusters), nclass=self.n_clusters)
+        self.labels_ = CE.cluster_ensembles(np.array(base_clusters), nclass=self.n_clusters, solver='hbgf')
 
         return self
 
