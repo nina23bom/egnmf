@@ -9,7 +9,7 @@ Dependencies
 - scipy
 - scikit-learn
 - networkx 
-- pymetis
+- ClusterEnsembles
 - munkres
 - pyitlib
 
