@@ -5,6 +5,8 @@ EGNMF is a GNMF-based clustering algorithm using cluster ensembles. The algorith
 Main Results
 ------------
 
+The following results are obtained from [simulation.ipynb][simulation].
+
 - Accuracy (AC)
 
 <p align="center">
