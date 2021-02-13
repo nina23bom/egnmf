@@ -18,7 +18,7 @@ class EGNMF:
     Conduct GNMF-based clustering using cluster ensembles (HBGF).
     See simulation.ipynb.
     """
-    def __init__(self, n_clusters, rterm=100.0, p=5, max_iter=30, n_estimators=30, random_state=None):
+    def __init__(self, n_clusters, rterm=100.0, p=5, max_iter=30, n_estimators=40, random_state=None):
         """Create a new instance"""
         if not (n_clusters > 1):
             raise(ValueError('n_components must be greater than 1.'))
