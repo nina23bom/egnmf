@@ -1,7 +1,7 @@
+# requirements.txt
 numpy
 scipy
 scikit-learn
-networkx
 ClusterEnsembles
 munkres
 pyitlib

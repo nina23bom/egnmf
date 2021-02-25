@@ -25,7 +25,6 @@ Dependencies
 - numpy
 - scipy
 - scikit-learn
-- networkx 
 - ClusterEnsembles
 - munkres
 - pyitlib

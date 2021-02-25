@@ -7,7 +7,6 @@
 
 import numpy as np
 from sklearn.cluster import KMeans
-import networkx as nx
 import ClusterEnsembles as CE
 from .gnmf import GNMF, const_pNNgraph, preproc_ncw
 from .metrics import calc_ac_score, calc_nmi_score
