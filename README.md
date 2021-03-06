@@ -5,7 +5,7 @@ EGNMF is a GNMF-based clustering algorithm using cluster ensembles. The algorith
 Main Results
 ------------
 
-The following results are obtained from [simulation.ipynb][simulation].
+The following results are obtained from [simulation.ipynb](https://github.com/tsano430/egnmf/blob/master/simulation.ipynb) which uses the [digits dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html). 
 
 - Accuracy (AC)
 
@@ -37,5 +37,3 @@ References
 [2] D. Cai, X. He, J. Han, and T. S. Huang, Graph regularized nonnegative matrix factorization for data representation, IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 33, no. 8, pp. 1548–1560, 2010.
 
 [3] X. Z. Fern and C. E. Brodley, Solving cluster ensemble problems by bipartite graph partitioning,  In Proceedings of the 21st International Conference on Machine Learning, p. 36, 2004.
-
-[simulation]: https://github.com/tsano430/egnmf/blob/master/simulation.ipynb
