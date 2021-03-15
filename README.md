@@ -2,6 +2,10 @@
 
 EGNMF is a GNMF-based clustering algorithm using cluster ensembles. The algorithm stably achieves a high and robust clustering performance. 
 
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/60049342/111096596-42a12880-8583-11eb-9315-eb74187ae377.png">
+</p>
+
 Main Results
 ------------
 
