@@ -2,10 +2,6 @@
 
 EGNMF is a GNMF-based clustering algorithm using cluster ensembles. The algorithm stably achieves a high and robust clustering performance. 
 
-<p align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/60049342/111096596-42a12880-8583-11eb-9315-eb74187ae377.png">
-</p>
-
 Main Results
 ------------
 
@@ -14,13 +10,13 @@ The following results are obtained from [simulation.ipynb](https://github.com/ts
 - Accuracy (AC)
 
 <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/60049342/107864344-a1995200-6e9e-11eb-947d-2f7a959d0dd4.png">
+  <img width="500" src="https://user-images.githubusercontent.com/60049342/115107305-f80d3480-9fa4-11eb-9c15-f49919278596.png">
 </p>
 
 - Normalized Mutual Information (NMI)
 
 <p align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/60049342/107864355-c68dc500-6e9e-11eb-8892-b49c82b24b75.png">
+  <img width="500" src="https://user-images.githubusercontent.com/60049342/115107327-22f78880-9fa5-11eb-8c7a-751dc87e097e.png">
 </p>
 
 Dependencies
